@@ -4,5 +4,10 @@ export default {
     'translator': {
       path: 'service:affinity-engine/translator-ember-intl'
     }
+  },
+  plugin: {
+    translator: {
+      locale: 'en-us'
+    }
   }
 };

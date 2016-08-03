@@ -1,0 +1,5 @@
+'affinity-engine':
+  'translator-ember-intl':
+    dummy:
+      string: 'I am a string'
+      html: 'I <em>am</em> html'
