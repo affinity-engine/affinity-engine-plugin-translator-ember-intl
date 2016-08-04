@@ -54,7 +54,7 @@ export default Service.extend(ConfigurableMixin, {
     if (intl.exists(id)) {
       const options = get(translationHash, 'options') || get(translationHash, 'text.options');
 
-      return intl.formatHtmlMessage(id, options);
+      return intl.formatHtmlMessage(intl.findTranslationByKey(id), options);
     }
   },
 

@@ -2,4 +2,5 @@
   'translator-ember-intl':
     dummy:
       string: 'I am a string'
+      interpolated: '{name} is interpolated'
       html: 'I <em>am</em> html'

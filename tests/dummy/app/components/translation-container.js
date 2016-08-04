@@ -8,6 +8,8 @@ const {
   get
 } = Ember;
 
+const { String: { htmlSafe } } = Ember;
+
 export default Component.extend({
   config: multiton('affinity-engine/config', 'engineId'),
   translator: registrant('affinity-engine/translator'),
@@ -18,9 +20,15 @@ export default Component.extend({
     }
   }).readOnly(),
 
+  intlInterpolated: computed({
+    get() {
+      return get(this, 'translator').translate({ id: 'affinity-engine.translator-ember-intl.dummy.interpolated', options: { name: 'Joe' } });
+    }
+  }).readOnly(),
+
   intlHtml: computed({
     get() {
-      return get(this, 'translator').translate('not.valid', 'affinity-engine.translator-ember-intl.dummy.html');
+      return htmlSafe(get(this, 'translator').translate('not.valid', 'affinity-engine.translator-ember-intl.dummy.html'));
     }
   }).readOnly()
 });
