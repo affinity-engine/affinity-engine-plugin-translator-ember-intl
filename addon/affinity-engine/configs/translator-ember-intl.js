@@ -5,9 +5,6 @@ export default {
       path: 'service:affinity-engine/translator-ember-intl'
     }
   },
-  plugin: {
-    translator: {
-      locale: 'en-us'
-    }
-  }
+  defaultLocale: 'en-us',
+  locales: ['en-us']
 };

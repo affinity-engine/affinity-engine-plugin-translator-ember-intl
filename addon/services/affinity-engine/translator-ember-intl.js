@@ -20,12 +20,16 @@ export default Service.extend(ConfigurableMixin, {
 
   config: multiton('affinity-engine/config', 'engineId'),
 
-  locale: configurable(configurationTiers, 'locale'),
+  defaultLocale: configurable(configurationTiers, 'defaultLocale'),
+  locales: configurable(configurationTiers, 'locales'),
 
   init(...args) {
     this._super(...args);
+    this.setLocale(get(this, 'defaultLocale'));
+  },
 
-    get(this, 'intl').setLocale(get(this, 'locale'));
+  setLocale(locale) {
+    get(this, 'intl').setLocale(locale);
   },
 
   /**
