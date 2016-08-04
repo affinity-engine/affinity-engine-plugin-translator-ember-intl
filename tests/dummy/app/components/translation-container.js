@@ -16,7 +16,7 @@ export default Component.extend({
 
   intlString: computed({
     get() {
-      return get(this, 'translator').translate('affinity-engine.translator-ember-intl.dummy.string');
+      return get(this, 'translator').translate({ text: 'affinity-engine.translator-ember-intl.dummy.string' });
     }
   }).readOnly(),
 

@@ -6,7 +6,7 @@ moduleFor('service:affinity-engine/translator-ember-intl', 'Unit | Service | aff
   needs: ['service:intl', 'service:multiton-service-manager']
 });
 
-test('setLocale sets the locale', function(assert) {
+test('`setLocale` sets the locale', function(assert) {
   assert.expect(1);
 
   const service = this.subject();
