@@ -28,6 +28,12 @@ export default Service.extend(ConfigurableMixin, {
     this.setLocale(get(this, 'defaultLocale'));
   },
 
+  /**
+    Sets the `intl` service's locale.
+
+    @method setLocale
+    @param {String} locale
+  */
   setLocale(locale) {
     get(this, 'intl').setLocale(locale);
   },
