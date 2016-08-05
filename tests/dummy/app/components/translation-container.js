@@ -38,9 +38,21 @@ export default Component.extend({
     }
   }).readOnly(),
 
+  intlNotString: computed({
+    get() {
+      return get(this, 'translator').translate(123) || 'Not String';
+    }
+  }).readOnly(),
+
+  intlDate: computed({
+    get() {
+      return get(this, 'translator').formatDate(new Date(2002,3,15,14,32,45));
+    }
+  }).readOnly(),
+
   intlNumber: computed({
     get() {
-      return get(this, 'translator').translate(123) || 'Number';
+      return get(this, 'translator').formatNumber(65.405);
     }
   }).readOnly()
 });

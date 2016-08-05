@@ -4,6 +4,7 @@ import multiton from 'ember-multiton-service';
 
 const {
   Service,
+  assign,
   get
 } = Ember;
 
@@ -28,6 +29,16 @@ export default Service.extend(ConfigurableMixin, {
   },
 
   /**
+    Sets the `intl` service's locale.
+
+    @method setLocale
+    @param {String} locale
+  */
+  setLocale(locale) {
+    get(this, 'intl').setLocale(locale);
+  },
+
+  /**
     Reports whether a translation with the given key exists.
 
     @method exists
@@ -38,13 +49,34 @@ export default Service.extend(ConfigurableMixin, {
   },
 
   /**
-    Sets the `intl` service's locale.
+    Localizes the provided date.
 
-    @method setLocale
-    @param {String} locale
+    @method formatDate
+    @param {String} date
+    @param {Object} options
+    @returns {String}
   */
-  setLocale(locale) {
-    get(this, 'intl').setLocale(locale);
+  formatDate(date, options = {}) {
+    return get(this, 'intl').formatTime(date, assign({
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }, options));
+  },
+
+  /**
+    Localizes the provided number.
+
+    @method formatNumber
+    @param {String} number
+    @param {Object} options
+    @returns {String}
+  */
+  formatNumber(number, options) {
+    return get(this, 'intl').formatNumber(number, options);
   },
 
   /**
