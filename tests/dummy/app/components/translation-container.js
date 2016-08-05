@@ -30,5 +30,11 @@ export default Component.extend({
     get() {
       return htmlSafe(get(this, 'translator').translate('not.valid', 'affinity-engine.translator-ember-intl.dummy.html'));
     }
+  }).readOnly(),
+
+  intlFallback: computed({
+    get() {
+      return htmlSafe(get(this, 'translator').translate('I should not be translated'));
+    }
   }).readOnly()
 });

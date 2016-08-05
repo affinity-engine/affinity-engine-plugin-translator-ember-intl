@@ -47,14 +47,13 @@ export default Service.extend(ConfigurableMixin, {
     @returns {String}
   */
   translate(...translationHashes) {
+    const intl = get(this, 'intl');
     const fallback = translationHashes[0];
     const translationHash = translationHashes.find((translation) => {
-      return this._getTranslation(translation);
+      return intl.exists(this._getId(translation));
     });
 
-    const translation = this._getTranslation(translationHash);
-
-    return isBlank(translation) ? this._getId(fallback) : translation.string;
+    return isBlank(translationHash) ? this._getId(fallback) : this._getTranslation(translationHash).string;
   },
 
   _getTranslation(translationHash) {
