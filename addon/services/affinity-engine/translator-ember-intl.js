@@ -33,7 +33,7 @@ export default Service.extend(ConfigurableMixin, {
     @method exists
     @param {String} key
   */
-  exists(key) {
+  exists(key = '') {
     return get(this, 'intl').exists(key.toString());
   },
 
