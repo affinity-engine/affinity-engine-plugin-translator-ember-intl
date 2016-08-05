@@ -22,7 +22,7 @@ export default Component.extend({
 
   intlInterpolated: computed({
     get() {
-      return get(this, 'translator').translate({ id: 'affinity-engine.translator-ember-intl.dummy.interpolated', options: { name: 'Joe' } });
+      return get(this, 'translator').translate({ key: 'affinity-engine.translator-ember-intl.dummy.interpolated', options: { name: 'Joe' } });
     }
   }).readOnly(),
 
