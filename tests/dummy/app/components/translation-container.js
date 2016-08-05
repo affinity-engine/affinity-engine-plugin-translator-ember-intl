@@ -16,25 +16,25 @@ export default Component.extend({
 
   intlString: computed({
     get() {
-      return get(this, 'translator').translate({ text: 'affinity-engine.translator-ember-intl.dummy.string' });
+      return get(this, 'translator').translate('affinity-engine.translator-ember-intl.dummy.string');
     }
   }).readOnly(),
 
   intlInterpolated: computed({
     get() {
-      return get(this, 'translator').translate({ key: 'affinity-engine.translator-ember-intl.dummy.interpolated', options: { name: 'Joe' } });
+      return get(this, 'translator').translate('affinity-engine.translator-ember-intl.dummy.interpolated', { name: 'Joe' });
     }
   }).readOnly(),
 
   intlHtml: computed({
     get() {
-      return htmlSafe(get(this, 'translator').translate('not.valid', 'affinity-engine.translator-ember-intl.dummy.html'));
+      return htmlSafe(get(this, 'translator').translate('affinity-engine.translator-ember-intl.dummy.html'));
     }
   }).readOnly(),
 
   intlFallback: computed({
     get() {
-      return htmlSafe(get(this, 'translator').translate('I should not be translated'));
+      return get(this, 'translator').translate('invalid') || 'I should not be translated';
     }
   }).readOnly()
 });
