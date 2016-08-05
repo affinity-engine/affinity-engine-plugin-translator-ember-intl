@@ -34,7 +34,7 @@ export default Service.extend(ConfigurableMixin, {
     @param {String} key
   */
   exists(key) {
-    get(this, 'intl').exists(key);
+    return get(this, 'intl').exists(key.toString());
   },
 
   /**
@@ -56,10 +56,10 @@ export default Service.extend(ConfigurableMixin, {
     @returns {String}
   */
   translate(key, options) {
-    const intl = get(this, 'intl');
+    if (this.exists(key)) {
+      const intl = get(this, 'intl');
 
-    if (intl.exists(key || '')) {
-      return intl.formatHtmlMessage(intl.findTranslationByKey(key), options).string;
+      return intl.formatHtmlMessage(intl.findTranslationByKey(key.toString()), options).string;
     }
   }
 });

@@ -36,5 +36,11 @@ export default Component.extend({
     get() {
       return get(this, 'translator').translate('invalid') || 'I should not be translated';
     }
+  }).readOnly(),
+
+  intlNumber: computed({
+    get() {
+      return get(this, 'translator').translate(123) || 'Number';
+    }
   }).readOnly()
 });
