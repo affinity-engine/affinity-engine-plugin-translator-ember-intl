@@ -9,7 +9,7 @@ moduleFor('service:affinity-engine/translator-ember-intl', 'Unit | Service | aff
 test('`setLocale` sets the locale', function(assert) {
   assert.expect(1);
 
-  const service = this.subject();
+  const service = this.subject({ config: {} });
 
   service.setLocale('es');
 
