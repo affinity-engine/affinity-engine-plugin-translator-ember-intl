@@ -18,7 +18,7 @@ test('`setLocale` sets the locale', function(assert) {
 
 const configurationTiers = [
   'config.attrs.plugin.translator',
-  'config.attrs'
+  'config.attrs.global'
 ];
 
 configurationTiers.forEach((tier) => {
