@@ -7,7 +7,9 @@ moduleForAcceptance('Acceptance | translator ember intl');
 test('visiting /translator-ember-intl', function(assert) {
   assert.expect(8);
 
-  visit('/').then(() => {
+  visit('/');
+
+  andThen(() => {
     assert.equal($hook('intl_string').text().trim(), 'I am a string', 'plain strings work');
     assert.equal($hook('intl_interpolated').text().trim(), 'Joe is interpolated', 'interpolation works');
     assert.equal($hook('intl_html').html(), 'I <em>am</em> html', 'html is correct');
