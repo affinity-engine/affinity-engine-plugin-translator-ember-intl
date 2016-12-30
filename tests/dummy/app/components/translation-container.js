@@ -38,6 +38,12 @@ export default Component.extend({
     }
   }).readOnly(),
 
+  intlFallbackUndefined: computed({
+    get() {
+      return get(this, 'translator').translate() || 'undefined should not be translated';
+    }
+  }).readOnly(),
+
   intlNotString: computed({
     get() {
       return get(this, 'translator').translate(123) || 'Not String';

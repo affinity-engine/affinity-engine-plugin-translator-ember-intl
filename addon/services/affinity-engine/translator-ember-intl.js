@@ -5,7 +5,8 @@ import multiton from 'ember-multiton-service';
 const {
   Service,
   assign,
-  get
+  get,
+  isPresent
 } = Ember;
 
 const { inject: { service } } = Ember;
@@ -88,7 +89,7 @@ export default Service.extend(ConfigurableMixin, {
     @returns {String}
   */
   translate(key, options) {
-    if (this.exists(key)) {
+    if (isPresent(key) && this.exists(key)) {
       const intl = get(this, 'intl');
 
       return intl.formatHtmlMessage(intl.findTranslationByKey(key.toString()), options).string;

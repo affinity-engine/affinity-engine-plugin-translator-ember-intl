@@ -5,7 +5,7 @@ import { $hook } from 'ember-hook';
 moduleForAcceptance('Acceptance | translator ember intl');
 
 test('visiting /translator-ember-intl', function(assert) {
-  assert.expect(8);
+  assert.expect(9);
 
   visit('/');
 
@@ -15,6 +15,7 @@ test('visiting /translator-ember-intl', function(assert) {
     assert.equal($hook('intl_html').html(), 'I <em>am</em> html', 'html is correct');
     assert.equal($hook('intl_html').text().trim(), 'I am html', 'html is safe');
     assert.equal($hook('intl_fallback').text().trim(), 'I should not be translated', 'fallback comes through');
+    assert.equal($hook('intl_fallback_undefined').text().trim(), 'undefined should not be translated', 'undefined fallback comes through');
     assert.equal($hook('intl_not_string').text().trim(), 'Not String', 'non-strings do not break things');
     assert.equal($hook('intl_number').text().trim(), '65.405', 'numbers are formatted');
 

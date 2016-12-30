@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^5.1.7",
-    "ember-intl": "^2.16.0"
+    "ember-intl": "2.13.0"
   },
   "devDependencies": {
     "affinity-engine": "git+https://github.com/affinity-engine/affinity-engine.git",
