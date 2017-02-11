@@ -3,4 +3,4 @@
 
 # affinity-engine-translator-ember-intl
 
-You'll find the interactive guides [here](http://www.affinityengine.org/plugins/translator-ember-intl).
+You'll find the interactive guides [here](http://www.affinityengine.org/#/plugins/translator-ember-intl).

@@ -1,6 +1,6 @@
 {
   "name": "affinity-engine-translator-ember-intl",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An Affinity Engine translator using ember-intl",
   "keywords": [
     "ember-addon",
@@ -25,7 +25,7 @@
     "ember-intl": "2.13.0"
   },
   "devDependencies": {
-    "affinity-engine": "git+https://github.com/affinity-engine/affinity-engine.git",
+    "affinity-engine": "^0.1.0",
     "babel-eslint": "^6.0.4",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
@@ -53,7 +53,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://www.affinityengine.org/plugins/translator-ember-intl",
+    "demoURL": "http://www.affinityengine.org/#/plugins/translator-ember-intl",
     "after": [
       "affinity-engine"
     ]
