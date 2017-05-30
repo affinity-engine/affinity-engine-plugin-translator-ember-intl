@@ -37,6 +37,13 @@ export default Service.extend(ConfigurableMixin, {
   */
   setLocale(locale) {
     get(this, 'intl').setLocale(locale);
+    this._hydrate(locale);
+  },
+
+  _hydrate(localeName) {
+    const intl = get(this, 'intl');
+
+    get(intl, 'adapter').localeFactory(localeName).addTranslations(intl._owner.resolveRegistration(`translation:${localeName}`));
   },
 
   /**
