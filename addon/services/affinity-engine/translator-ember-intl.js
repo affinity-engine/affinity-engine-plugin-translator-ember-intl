@@ -12,8 +12,8 @@ const {
 const { inject: { service } } = Ember;
 
 const configurationTiers = [
-  'config.attrs.plugin.translator',
-  'config.attrs.global'
+  'plugin.translator',
+  'children'
 ];
 
 export default Service.extend(ConfigurableMixin, {

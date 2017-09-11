@@ -1,8 +1,10 @@
 export default {
   priority: 2,
-  global: {
-    defaultLocale: 'en-us',
-    locales: ['en-us']
+  children: {
+    attrs: {
+      defaultLocale: 'en-us',
+      locales: ['en-us']
+    }
   },
   registrant: {
     'affinity-engine': {

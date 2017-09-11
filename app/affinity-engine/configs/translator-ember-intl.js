@@ -1,1 +1,1 @@
-export { default } from 'affinity-engine-translator-ember-intl/affinity-engine/configs/translator-ember-intl';
+export { default } from 'affinity-engine-plugin-translator-ember-intl/affinity-engine/configs/translator-ember-intl';

@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'affinity-engine-translator-ember-intl'
+  name: 'affinity-engine-plugin-translator-ember-intl'
 };
