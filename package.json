@@ -1,6 +1,6 @@
 {
   "name": "affinity-engine-plugin-translator-ember-intl",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "description": "An Affinity Engine translator using ember-intl",
   "keywords": [
     "ember-addon",

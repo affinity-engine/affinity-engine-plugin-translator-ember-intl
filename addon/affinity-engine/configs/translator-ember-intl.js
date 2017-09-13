@@ -1,6 +1,6 @@
 export default {
   priority: 2,
-  children: {
+  all: {
     attrs: {
       defaultLocale: 'en-us',
       locales: ['en-us']
