@@ -1,9 +1,11 @@
 export default {
   priority: 2,
-  all: {
-    attrs: {
-      defaultLocale: 'en-us',
-      locales: ['en-us']
+  default: {
+    all: {
+      attrs: {
+        defaultLocale: 'en-us',
+        locales: ['en-us']
+      }
     }
   },
   registrant: {
